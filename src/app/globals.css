@@ -1,0 +1,117 @@
+@import "tailwindcss";
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Watcom IV Academy design system — cream, plum and blush, Marcellus SC + Manrope */
+
+@theme inline {
+  --font-display: "Marcellus SC", "Marcellus", Georgia, serif;
+  --font-serif: "Marcellus", Georgia, serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 1px);
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 2px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-blush: var(--blush);
+  --color-rose: var(--rose);
+  --color-success: var(--success);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.125rem;
+  --background: oklch(0.982 0.006 60);
+  --foreground: oklch(0.27 0.035 320);
+  --card: oklch(0.995 0.003 60);
+  --card-foreground: oklch(0.27 0.035 320);
+  --popover: oklch(0.995 0.003 60);
+  --popover-foreground: oklch(0.27 0.035 320);
+  --primary: oklch(0.4 0.055 320);
+  --primary-foreground: oklch(0.98 0.006 60);
+  --secondary: oklch(0.94 0.018 330);
+  --secondary-foreground: oklch(0.32 0.05 320);
+  --muted: oklch(0.955 0.01 50);
+  --muted-foreground: oklch(0.5 0.025 320);
+  --accent: oklch(0.93 0.025 30);
+  --accent-foreground: oklch(0.35 0.05 320);
+  --blush: oklch(0.93 0.03 345);
+  --rose: oklch(0.62 0.075 35);
+  --success: oklch(0.55 0.08 155);
+  --destructive: oklch(0.55 0.18 25);
+  --destructive-foreground: oklch(0.98 0.006 60);
+  --border: oklch(0.9 0.012 330);
+  --input: oklch(0.88 0.015 330);
+  --ring: oklch(0.4 0.055 320);
+  --gradient-panel: linear-gradient(160deg, oklch(0.94 0.025 320), oklch(0.96 0.02 40));
+  --shadow-soft: 0 20px 40px -24px color-mix(in oklab, var(--primary) 35%, transparent);
+  --sidebar: oklch(0.97 0.01 330);
+  --sidebar-foreground: oklch(0.27 0.035 320);
+  --sidebar-primary: oklch(0.4 0.055 320);
+  --sidebar-primary-foreground: oklch(0.98 0.006 60);
+  --sidebar-accent: oklch(0.93 0.025 330);
+  --sidebar-accent-foreground: oklch(0.27 0.035 320);
+  --sidebar-border: oklch(0.9 0.012 330);
+  --sidebar-ring: oklch(0.4 0.055 320);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: 0.01em;
+  }
+}
+
+@utility eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+@utility panel-gradient {
+  background-image: var(--gradient-panel);
+}
+
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
